@@ -1,9 +1,9 @@
 #!/bin/bash
-# File  : tubestatus.sh
+# File  : trainstatus.sh
 # Author: Matthieu Petiteau <mpetiteau.pro@gmail.com>
 # Date  : 25.09.2019
 
-# This script fetch the tube line statuses from the TFL API
+# This script fetch the tube or rail line statuses from the TFL API
 # https://api.tfl.gov.uk and returns the results in terminal.
 
 if ! command -v jq &>/dev/null; then
@@ -36,12 +36,19 @@ if ! command -v jq &>/dev/null; then
   exit 0
 fi
 
+URL="https://api.tfl.gov.uk/line/mode/tube,overground,dlr,tflrail,national-rail/status"
+
+if [ "$1" = "tube" ]; then
+  URL="https://api.tfl.gov.uk/line/mode/tube,overground,dlr,tflrail/status"
+elif [ "$1" = "rail" ]; then
+  URL="https://api.tfl.gov.uk/line/mode/national-rail/status"
+fi
+
 DELIMITER="¬"
 RED="\033[01;31m"
 GREEN="\033[01;32m"
 YELLOW="\033[01;33m"
 NONE="\033[0m"
-URL="https://api.tfl.gov.uk/line/mode/tube,overground,dlr,tflrail,national-rail/status"
 
 curl -s $URL |
   jq --arg delim $DELIMITER -j '.[] |

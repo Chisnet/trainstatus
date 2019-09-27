@@ -1,7 +1,7 @@
-# tubestatus
+# trainstatus
 Access the London Tube lines status in real-time from your terminal.
 
-![Alt Text](https://github.com/smallwat3r/tubestatus/blob/master/_demo/demo.gif)  
+![Alt Text](https://github.com/Chisnet/trainstatus/blob/master/_demo/demo.gif)  
 
 ## Installation
 
@@ -16,8 +16,10 @@ make install
 ```
 or
 ```sh
-cp src/tubestatus /usr/local/bin/tubestatus
-chmod 755 /usr/local/bin/tubestatus
+cp src/trainstatus /usr/local/bin/trainstatus
+chmod 755 /usr/local/bin/trainstatus
 ```
 ## Running
-Running is as easy as a simple `tubestatus` in the terminal.
+Running is as easy as a simple `trainstatus` in the terminal.
+
+Add either tube or rail to filter
