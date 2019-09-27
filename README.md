@@ -1,8 +1,6 @@
 # trainstatus
 Access the London Tube and National Rail lines status in real-time from your terminal.
 
-![Alt Text](https://github.com/Chisnet/tubestatus/blob/master/_demo/demo.gif)  
-
 ## Installation
 
 ### Dependencies
