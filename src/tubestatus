@@ -41,7 +41,7 @@ RED="\033[01;31m"
 GREEN="\033[01;32m"
 YELLOW="\033[01;33m"
 NONE="\033[0m"
-URL="https://api.tfl.gov.uk/line/mode/tube,overground,dlr,tflrail/status"
+URL="https://api.tfl.gov.uk/line/mode/tube,overground,dlr,tflrail,national-rail/status"
 
 curl -s $URL |
   jq --arg delim $DELIMITER -j '.[] |
